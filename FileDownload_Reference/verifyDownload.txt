@@ -1,0 +1,7 @@
+
+    Then(/^User should be able to download the file ([^"]*) successfully$/, async (fileName) => {
+        await browser.sleep(5000);
+        var file1 = await fs.readdirSync(refData.getDownloadLocation);
+        await console.log(fileName);
+        await expect(file1[0]).to.include(fileName);
+    });
